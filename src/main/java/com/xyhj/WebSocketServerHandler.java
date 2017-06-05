@@ -12,7 +12,7 @@ import io.netty.util.concurrent.GlobalEventExecutor;
 import com.xyhj.dto.Response;
 import com.xyhj.entity.Client;
 import com.xyhj.service.RequestService;
-import net.TestSingleRedis;
+import net.RedisUtil;
 import org.json.JSONObject;
 import redis.clients.jedis.Jedis;
 
@@ -45,7 +45,7 @@ public class WebSocketServerHandler extends SimpleChannelInboundHandler {
 
     private WebSocketServerHandshaker handshaker;
 
-    private static Jedis jedis = TestSingleRedis.getJedis();
+    private static Jedis jedis = RedisUtil.getJedis();
 
     private static Map<Integer, Integer>  income = new ConcurrentHashMap<>();
 

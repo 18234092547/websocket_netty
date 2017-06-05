@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * Created by zhangjianghong on 2017-3-16.
  */
-public class TestSingleRedis {
+public class RedisUtil {
     //单例
     private  static Jedis jedis;
     //分片 提高了并行 sharding机制：即通常所说的“分片”，允许数据存放在不同的物理机器上

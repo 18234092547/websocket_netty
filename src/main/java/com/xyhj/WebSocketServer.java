@@ -8,7 +8,7 @@ import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioServerSocketChannel;
 import io.netty.handler.logging.LogLevel;
 import io.netty.handler.logging.LoggingHandler;
-import net.TestSingleRedis;
+import net.RedisUtil;
 
 
 public final class WebSocketServer {
@@ -31,7 +31,7 @@ public final class WebSocketServer {
                     .childHandler(new WebSocketServerInitializer());
 
             Channel ch = b.bind(PORT).sync().channel();
-            TestSingleRedis.StartRedis();
+            RedisUtil.StartRedis();
             ch.closeFuture().sync();
         } finally {
             bossGroup.shutdownGracefully();
